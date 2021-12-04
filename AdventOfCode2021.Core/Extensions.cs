@@ -33,6 +33,7 @@ public static class Extensions
 
         return folderName;
     }
+
     public static string CurrentProjectFolder(this string sender)
     {
         return sender.UpperFolder(3);
