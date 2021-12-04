@@ -16,7 +16,7 @@ public class TextFileReader : IFileReader
     {
         try
         {
-           return File.ReadAllText($"{_filePath}/{_day}/input.txt");
+            return File.ReadAllText($"{_filePath}/{_day}/input.txt");
         }
         catch (Exception)
         {

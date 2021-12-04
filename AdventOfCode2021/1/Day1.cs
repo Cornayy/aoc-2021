@@ -2,7 +2,7 @@
 
 public class Day1 : AbstractDay
 {
-    public Day1() : base(1) 
+    public Day1() : base(1)
     {
     }
 
@@ -12,7 +12,7 @@ public class Day1 : AbstractDay
         var previousMeasurement = 0;
         var amountOfMeasurements = 0;
 
-        foreach(var measurement in measurements)
+        foreach (var measurement in measurements)
         {
             if (previousMeasurement != 0 && measurement > previousMeasurement) amountOfMeasurements++;
             previousMeasurement = measurement;
@@ -30,7 +30,7 @@ public class Day1 : AbstractDay
         var previousSum = 0;
         var amountOfMeasurements = 0;
 
-        foreach(var (measurement, index) in measurements.Select((x, i) => (x, i)))
+        foreach (var (measurement, index) in measurements.Select((x, i) => (x, i)))
         {
             try
             {
@@ -42,7 +42,7 @@ public class Day1 : AbstractDay
                 if (previousSum != 0 && sum > previousSum) amountOfMeasurements++;
                 previousSum = sum;
             }
-            catch(ArgumentOutOfRangeException)
+            catch (ArgumentOutOfRangeException)
             {
                 break;
             }
