@@ -1,1 +1,1 @@
-﻿global using AdventOfCode2021.Core;
+﻿global using AdventOfCode2021.Core.Common;

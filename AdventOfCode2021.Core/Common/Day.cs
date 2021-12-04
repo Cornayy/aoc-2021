@@ -1,15 +1,15 @@
-﻿using System.Diagnostics;
-using System.Reflection;
+﻿using AdventOfCode2021.Core.Interfaces;
+using System.Diagnostics;
 
-namespace AdventOfCode2021.Core;
+namespace AdventOfCode2021.Core.Common;
 
-public abstract class AbstractDay : IDay
+public abstract class Day : IDay
 {
     protected IFileReader FileReader { get; private set; }
 
-    public AbstractDay(int day)
+    public Day(int day)
     {
-        var basePath = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory.CurrentProjectFolder());
+        var basePath = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory.GetCurrentProjectFolder());
         if (string.IsNullOrEmpty(basePath)) throw new Exception("Base directory path could not be found.");
 
         FileReader = new TextFileReader(
@@ -24,7 +24,10 @@ public abstract class AbstractDay : IDay
 
     public void Solve()
     {
+        Console.Write($"[{nameof(SolveA)}]: ");
         SolveAndLogElapsedSeconds(SolveA);
+
+        Console.Write($"[{nameof(SolveB)}]: ");
         SolveAndLogElapsedSeconds(SolveB);
     }
 
@@ -34,7 +37,7 @@ public abstract class AbstractDay : IDay
         stopWatch.Start();
 
         action();
-        Console.WriteLine($"Executed {action.Method.Name} ({stopWatch.ElapsedMilliseconds} ms)");
+        Console.WriteLine($" ({stopWatch.ElapsedMilliseconds} ms)");
 
         stopWatch.Stop();
     }

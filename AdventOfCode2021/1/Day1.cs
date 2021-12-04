@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCode2021._1;
 
-public class Day1 : AbstractDay
+public class Day1 : Day
 {
     public Day1() : base(1)
     {
@@ -8,7 +8,7 @@ public class Day1 : AbstractDay
 
     protected override void SolveA()
     {
-        var measurements = FileReader.ReadWithNewLines().ConvertToIntegerEnumerable();
+        var measurements = FileReader.ReadAsEnumerable().ConvertToIntegerEnumerable();
         var previousMeasurement = 0;
         var amountOfMeasurements = 0;
 
@@ -18,13 +18,13 @@ public class Day1 : AbstractDay
             previousMeasurement = measurement;
         }
 
-        Console.WriteLine(amountOfMeasurements);
+        Console.Write(amountOfMeasurements);
     }
 
     protected override void SolveB()
     {
         var measurements = FileReader
-            .ReadWithNewLines()
+            .ReadAsEnumerable()
             .ConvertToIntegerEnumerable()
             .ToList();
         var previousSum = 0;
@@ -48,6 +48,6 @@ public class Day1 : AbstractDay
             }
         }
 
-        Console.WriteLine(amountOfMeasurements);
+        Console.Write(amountOfMeasurements);
     }
 }

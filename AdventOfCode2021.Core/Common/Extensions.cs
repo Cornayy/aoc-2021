@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode2021.Core;
+﻿namespace AdventOfCode2021.Core.Common;
 
 public static class Extensions
 {
@@ -7,7 +7,7 @@ public static class Extensions
         return enumerable.Select(x => int.Parse(x));
     }
 
-    public static string UpperFolder(this string folderName, int level)
+    public static string GetUpperFolder(this string folderName, int level)
     {
         var folderList = new List<string>();
 
@@ -34,8 +34,8 @@ public static class Extensions
         return folderName;
     }
 
-    public static string CurrentProjectFolder(this string sender)
+    public static string GetCurrentProjectFolder(this string sender)
     {
-        return sender.UpperFolder(3);
+        return sender.GetUpperFolder(3);
     }
 }

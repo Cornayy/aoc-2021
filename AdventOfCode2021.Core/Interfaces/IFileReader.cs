@@ -1,7 +1,7 @@
-﻿namespace AdventOfCode2021.Core;
+﻿namespace AdventOfCode2021.Core.Interfaces;
 
 public interface IFileReader
 {
     string ReadAsString();
-    IEnumerable<string> ReadWithNewLines();
+    IEnumerable<string> ReadAsEnumerable();
 }
