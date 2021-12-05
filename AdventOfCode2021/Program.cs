@@ -1,6 +1,6 @@
-﻿using AdventOfCode2021._1;
+﻿using AdventOfCode2021._2;
 
-var day = new Day1();
+var day = new Day2();
 day.Solve();
 
 Console.ReadKey();

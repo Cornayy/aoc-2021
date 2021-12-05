@@ -12,10 +12,7 @@ public abstract class Day : IDay
         var basePath = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory.GetCurrentProjectFolder());
         if (string.IsNullOrEmpty(basePath)) throw new Exception("Base directory path could not be found.");
 
-        FileReader = new TextFileReader(
-            day,
-            basePath
-        );
+        FileReader = new TextFileReader(day, basePath);
     }
 
     protected abstract void SolveA();
@@ -33,12 +30,19 @@ public abstract class Day : IDay
 
     private static void SolveAndLogElapsedSeconds(Action action)
     {
-        var stopWatch = new Stopwatch();
-        stopWatch.Start();
+        try
+        {
+            var stopWatch = new Stopwatch();
+            stopWatch.Start();
 
-        action();
-        Console.WriteLine($" ({stopWatch.ElapsedMilliseconds} ms)");
+            action();
+            Console.WriteLine($" ({stopWatch.ElapsedMilliseconds} ms)");
 
-        stopWatch.Stop();
+            stopWatch.Stop();
+        }
+        catch (Exception exception)
+        {
+            Console.WriteLine($"An error occurred while solving the problem [{exception.Message}].");
+        }
     }
 }
