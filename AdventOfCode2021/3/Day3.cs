@@ -45,11 +45,11 @@ public class Day3 : Day
 
             if (common)
             {
-                expression = areEqual ? expression = expression.Where(x => x[i] == '1').ToList() : expression.Where(x => x[i] == '0').ToList();
+                expression = areEqual ? expression.Where(x => x[i] == '1').ToList() : expression.Where(x => x[i] == '0').ToList();
             }
             else if (expression.Count > 1)
             {
-                expression = areEqual ? expression = expression.Where(x => x[i] == '0').ToList() : expression = expression.Where(x => x[i] == '1').ToList();
+                expression = areEqual ? expression.Where(x => x[i] == '0').ToList() : expression.Where(x => x[i] == '1').ToList();
             }
         }
 

@@ -7,10 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode2021", "AdventO
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{18DE8159-7936-4CBC-9913-45B6851A7706}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode2021.Core", "AdventOfCode2021.Core\AdventOfCode2021.Core.csproj", "{EA79CFDE-2B8D-401E-89CC-4F32EEFFCBF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode2021.Core", "AdventOfCode2021.Core\AdventOfCode2021.Core.csproj", "{EA79CFDE-2B8D-401E-89CC-4F32EEFFCBF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
