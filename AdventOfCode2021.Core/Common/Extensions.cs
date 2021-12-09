@@ -7,6 +7,17 @@ public static class Extensions
         return enumerable.Select(x => int.Parse(x));
     }
 
+    public static IEnumerable<(int row, int column, T value)> Flat<T>(this T[,] src)
+    {
+        for (var i = 0; i < src.GetLength(0); i++)
+        {
+            for (var j = 0; j < src.GetLength(1); j++)
+            {
+                yield return (i, j, src[i, j]);
+            }
+        }
+    }
+
     public static string GetUpperFolder(this string folderName, int level)
     {
         var folderList = new List<string>();
